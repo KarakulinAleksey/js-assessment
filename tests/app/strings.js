@@ -12,7 +12,7 @@ describe('strings', function() {
   });
 
   it('you should be able to wrap lines at a given number of columns, without breaking words', function() {
-    var wrapCol = 5;
+    var wrapCol = 3;
     var inputStrings = [
       'abcdef abcde abc def',
       'abc abc abc',

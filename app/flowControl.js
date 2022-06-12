@@ -11,5 +11,24 @@ exports.flowControlAnswers = {
     // otherwise the function should return the number, or false if no number
     // was provided or the value provided is not a number
 
+    if (typeof(num) === 'number'){
+      if (!(num % 3) && !(num % 5)){
+        // console.log('fizzbuzz');
+        return ('fizzbuzz');
+      } else if (!(num % 3)) {
+        // console.log('fizz');
+        return ('fizz');    
+      } else if (!(num % 5)){
+        // console.log('buzz');
+        return ('buzz');
+      } else {
+        // console.log(num);
+        return num;
+      }
+    // } else {
+    //   console.log(false);
+      return (false);
+    }
+ 
   }
 };

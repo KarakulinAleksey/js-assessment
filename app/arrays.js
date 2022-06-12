@@ -6,7 +6,6 @@ exports.arraysAnswers = {
     return (arr.indexOf(item));
   },
 
-
   sum: function(arr) {
     let sum = 0;
     //  for (let i=0; i<arr.length; i++){
@@ -115,7 +114,7 @@ exports.arraysAnswers = {
     
     arr.forEach((element, i) => {
       let itemSquare = 0;
-      console.log(element, i);
+      // console.log(element, i);
       itemSquare = element * element;
       arr.splice(i, 1, itemSquare);
     });
@@ -133,4 +132,37 @@ exports.arraysAnswers = {
     // console.log(arr2);
     return arr2;
   }
+
 };
+
+// function binSeach(valZad){
+//   const arr1 = [];
+//   for (let i=0; i<100; i++){
+//     arr1[i]=i;
+//   }
+//   console.log(arr1);
+
+//   let low=0;
+//   let high=arr1.length-1;
+//   let mid=0;
+  
+//   val=0;
+
+//   while (low<=high){
+//     mid=Math.floor((low+high)/2);
+//     val=arr1[mid];
+//     console.log(mid,val); 
+//     if (val==valZad){
+//       return val;
+//     }
+//     if (val>valZad){
+//       high=mid-1;
+//     }else{
+//       low=mid+1;
+//     }
+   
+//   }
+//   return undefined;
+// }
+
+// console.log(binSeach(13));

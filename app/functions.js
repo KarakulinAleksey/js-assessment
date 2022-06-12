@@ -2,11 +2,14 @@ exports = typeof window === 'undefined' ? global : window;
 
 exports.functionsAnswers = {
   argsAsArray: function(fn, arr) {
-
+    
+    // console.log(...arr);
+    return fn(...arr);
   },
 
   speak: function(fn, obj) {
-
+    const fn2 = fn.bind(obj);
+    return fn2();
   },
 
   functionFunction: function(str) {
@@ -37,3 +40,15 @@ exports.functionsAnswers = {
 
   }
 };
+
+const auto = {
+  brand: 'BMW',
+  drive(){
+    return `заведем наш ${this.brand}`;
+  }
+}
+
+const autoDrive = auto.drive.bind(auto);
+
+
+
