@@ -87,22 +87,22 @@ exports.arraysAnswers = {
 
   duplicates: function(arr) {
     // debugger;
-    console.log(arr);
+    // console.log(arr);
     let arr2 = [];
     for (let i=arr.length-1; i>=0; i--){
       // console.log(arr[i]);
       arr.splice(i, 1);
-      console.log(arr);
+      // console.log(arr);
       for (let s=arr.length-1; s>=0; s--){
         // console.log(arr[i-1]);
-        console.log(arr[s]);
+        // console.log(arr[s]);
         if (arr[s]==arr[i-1]){
           arr2.push(arr[i-1]);
         }
       }
       
     }
-    console.log(arr2);
+    // console.log(arr2);
     // return arr2;
   },
 

@@ -10,7 +10,8 @@ exports.functionsAnswers = {
   },
 
   functionFunction: function(str) {
-
+   return (argFunction) => `${str}, ${argFunction}`;
+   
   },
 
   makeClosures: function(arr, fn) {
@@ -36,4 +37,6 @@ exports.functionsAnswers = {
   curryIt: function(fn) {
 
   }
+
 };
+
