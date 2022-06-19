@@ -41,14 +41,14 @@ exports.functionsAnswers = {
   }
 };
 
-const auto = {
-  brand: 'BMW',
-  drive(){
-    return `заведем наш ${this.brand}`;
-  }
-}
+// const auto = {
+//   brand: 'BMW',
+//   drive(){
+//     return `заведем наш ${this.brand}`;
+//   }
+// }
 
-const autoDrive = auto.drive.bind(auto);
+// const autoDrive = auto.drive.bind(auto);
 
 
 
