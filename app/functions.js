@@ -62,70 +62,41 @@ exports.functionsAnswers = {
     return fn(...parm);
   },
 
-  partialUsingArguments: function(fn) {
-
+  partialUsingArguments: function(fn, ...arg) {
+   
+    return  (...parm)=>{
+      setArr = [...arg, ...parm];
+      return fn(...setArr);
+    };
   },
 
   curryIt: function(fn) {
+    // return (a)=>(b)=>(c)=>fn(a, b, c);
 
+    // console.log(a);
+    return function(a){
+
+      return function(b){
+        return function(c){
+         return fn(a,b,c);
+        }
+      }
+    }
   }
 };
 
-//**************** */
-// const auto = {
-//   brand: 'BMW',
-//   drive(){
-//     return `заведем наш ${this.brand}`;
-//   }
-// }
-
-//*************** */
-
-// const autoDrive = auto.drive.bind(auto);
-
-// const funX = function(q,w){
-//   return q+w;
-// }
-// console.log(funX);
-// console.log(funX(2,3));
-
-//***************** */
-
-/*const f1 = function(arr, fn) {
-  const result = [];
-
-  // for (let i = 0; i < arr.length; i += 1) {
-  //   // console.log(arr[i]);
-  //   const currentElem = arr[i];
-  //   result.push(function() {
-  //     // console.log(fn(currentElem));
-  //     return fn(arr[i]);
-  //   });
-  // }
-  arr.forEach(element => {
-    result.push(function() {
-      // console.log(fn(currentElem));
-      return fn(element);
-    });
-  });
-  // console.log(result);
-  return result;
+/*const generate = function(f){
+  return function(arg){
+    return f(f(arg));
+  }
 }
 
-var arr = [ Math.random(), Math.random(), Math.random(), Math.random() ];
-var square = function (x) { return x * x; };
-// f1(arr, square);
-const f2 = f1(arr, square);
-// console.log(f1(arr, square));
-console.log(f2);
-console.log(f2[0]());
-console.log(f2[1]());
-console.log(f2[2]());
-console.log(f2[3]());*/
+const fnSquare = function(a){
+  return a * 2;
+}
 
+// const f1 = generate (Math.sqrt);
 
-// function demo(a,b,c){
-//   return (`${a}' '${b}' '${c}`);
-// }
-// let partiaal = functionsAnswers.partial();
-// console.log(partiaal);
+console.log(generate);
+console.log(generate (fnSquare)(4));
+// console.log(f1(2));*/
