@@ -2,11 +2,15 @@ exports = typeof window === 'undefined' ? global : window;
 
 exports.numbersAnswers = {
   valueAtBit: function(num, bit) {
-    // console.log(num.toString(2));
-    // console.log('1000'[0]);
-    const strBit = num.toString(2);
-    // console.log(strBit);
-    return (num.toString(2)[bit]);
+    const arrBit = [...num.toString(2)];
+    // console.log(arrBit);
+    for (let i = arrBit.length-1; i>=0; i--){
+      // console.log(arrBit[i])
+      if (i==arrBit.length-bit){
+        // console.log(arrBit[arrBit.length-bit]);
+        return Number(arrBit[arrBit.length-bit]);
+      }
+    }
   },
 
   base10: function(str) {
@@ -19,21 +23,23 @@ exports.numbersAnswers = {
   },
 
   multiply: function(a, b) {
+    // debugger;
     const arr = [...b.toString()];
-    console.log(arr);
-    
-    for (let i = arr.length; i >=0; i--){
-      console.log(arr[i]);
-      let summ;
-      if (arr[i]==='.'){
+    // console.log(arr);
+    let summ = 0;
+    function arrSchet(){
+      for (let i = arr.length - 1; i >=0; i--){
+        if (arr[i]==='.'){
+          return summ;
+        }
+        // console.log('for', arr[i]);
         summ++;
-        return ;
       }
-    
     }
-    console.log('summ',summ);
+   
+    // console.log('summ',arrSchet());
     const val = a * b;
-    return (Number(val.toFixed(5)));
+    return (Number(val.toFixed(arrSchet())));
     
   }
 };
