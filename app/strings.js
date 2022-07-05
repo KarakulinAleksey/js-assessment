@@ -2,18 +2,42 @@ exports = typeof window === 'undefined' ? global : window;
 
 exports.stringsAnswers = {
   reduceString: function(str, amount) {
-    // console.log(str, amount);
+    console.log(str, amount);
+    const strOUT = [...str];
+    console.log(strOUT);
+    console.log(strOUT.join(''));
+
+    // strOUT.forEach((item)=>{
+    //   console.log(item);
+
+    // })
+    // debugger;
+    let i=0;
+    const res = strOUT.map((item, pos)=>{
+      
+      if ((strOUT[pos]===item)&&(i<1)){
+        i++;
+        return item;
+      }
+      
+    })
+
+    console.log(res);
+    // console.log(...strOUT);
     // let count=0;
+    // let strOut;
+
     // for(let i = 0; i<str.length; i++){
-    //   console.log(str[i]);
-    //   for(let a=0; a<str.length; a++){
+    //   console.log('for1', str[i]);
+  
+    //   for(let a = i; a<str.length; a++){
         
-    //     if (str[i]==str[a]){
-    //       console.log(count++);
+    //     if (str[a]==str[i]){
+    //       console.log('for2', str[a]);
     //     }
         
     //   }
-    //   count=0;
+    //   // count=0;
     // }
   },
 
